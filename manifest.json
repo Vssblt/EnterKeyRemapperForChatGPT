@@ -1,0 +1,27 @@
+{
+  "name": "Enter Key Re-mapper for ChatGPT",
+  "description": "将 ChatGPT 的回车发送改为换行，并使用 Ctrl+Enter 进行发送。",
+  "version": "1.0",
+  "manifest_version": 3,
+  "author": "Created by ChatGPT, customized by vssblt",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icon/icon-16.png",
+    "32": "icon/icon-32.png",
+    "48": "icon/icon-48.png",
+    "64": "icon/icon-64.png",
+    "128": "icon/icon-128.png",
+    "256": "icon/icon-256.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
